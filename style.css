@@ -1,0 +1,302 @@
+/* Bootstrap Icons import */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+/* Import the Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset the CSS of the page */
+*, *::before, *::after {
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', 'Open Sans', Arial, Tahoma;
+    transform-style: preserve-3d;
+    list-style-type: none;
+}
+
+:root {
+    scroll-behavior: smooth;
+    background-color: #10454F;
+    /* Variable Color */
+}
+
+/* Main CSS */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "sb ca ca"
+                         "bx ot ot"
+                         "ls ot ot"
+                         "ft ft ft";
+    background: #f2eff6;
+    margin: 40px auto;
+    width: 80%;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+/* Associate each area to a specific place in the grid */
+#search {
+    grid-area: sb;
+}
+.controlArea {
+    grid-area: ca;
+}
+.boxes {
+    grid-area: bx;
+}
+.lists {
+    grid-area: ls;
+}
+.output {
+    grid-area: ot;
+}
+.footer {
+    grid-area: ft;
+}
+
+/* Apply CSS to the control area */
+.container .controlArea {
+    display: flex;
+    justify-content: flex-end;
+}
+.container .controlArea .edit {
+    color: #277fcf;
+    text-decoration: none;
+}
+
+/* Apply CSS to the searchBar */
+.container #search {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.container #search input {
+    width: 100%;
+    background-color: #e3e2e8;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 20px 20px 60px;
+}
+.container form i {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8f8c93;
+    font-size: 22px;
+}
+
+/* Apply CSS to the boxes where whe displays the scheduled tasks */
+.container .boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container .boxes .box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    flex-basis: 48%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container .boxes .box i {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #fff;
+}
+.container .boxes .box.today i {
+   background: #DFFF00; 
+}
+.container .boxes .box.scheduled i {
+   background: #FFBF00; 
+}
+.container .boxes .box.all i {
+   background: #FF7F50; 
+}
+.container .boxes .box.flagged i {
+   background: #DE3163; 
+}
+.container .boxes .box .number {
+    font-size: 40px;
+    font-weight: bold;
+}
+.container .boxes .box .title {
+    flex-basis: 100%;
+    margin-top: 20px;
+    color: #8d8c91;
+}
+
+/* Apply CSS to the lists that specify the category of the task */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    padding-left: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+.container .lists {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.container .lists .list {
+    display: flex;
+    align-items: center;
+}
+.container .lists .list:not(:last-child) {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+.container .lists .list .icon {
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 25px;
+}
+.container .lists .list.todo .icon {
+    background: #1ab657;
+}
+.container .lists .list.family .icon {
+    background: #ffc506;
+}
+.container .lists .list .info {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    font-weight: bold;
+}
+.container .lists .list .number {
+    font-size: 30px;
+    color: #676464;
+    font-weight: normal;
+    margin-right: 10p;
+}
+.container .lists .list .number i {
+    margin-left: 10px;
+    color: #8e8b8b;
+    width: 50px;
+    height: 50px;
+}
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Apply CSS to the output, the right side of the page */
+.container .output .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+.container .output .completed{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin: 25px 0px 5px 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    border-width: 10%;
+}
+.container .output hr{
+    width: 80%;
+    color: #444;
+    margin: auto;
+}
+.container .output #clearButton,  .container .output #hideButton{
+    font-size: 20px;
+}
+
+/* Apply CSS to the form that takes the infos for the reminding */
+.container .output #reminderForm{
+    margin: 30px 0px 0px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 50px;
+    width: 90%;
+}
+.container .output #reminderForm input, .container .output #reminderForm select {
+    border-radius: 50px;
+    background-color: #e3e2e8;
+    border: none;
+    padding: 20px;
+}
+.container .output #reminderForm input[type="button"] {
+    width: 30%;
+    margin: 30px auto;
+}
+
+/* Apply CSS to the output part where the tasks are displayed */
+.container .output .remindersList{
+    margin: 0px 0px 0px 30px;
+    line-height: 30px;
+}
+.container .output .remindersList .row{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: min-content;
+    text-align: center;
+    font-size: 0.75em;
+    margin: 10px 0px 10px 0px;
+}
+.container .output .remindersList .row .iconTitle {
+    font-size: 1.75em;
+}
+.container .output .remindersList .row p{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.container .output .remindersList .row input[type="radio"],
+.container .output .remindersList .row input[type="checkbox"]
+{
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}
+
+/* Apply CSS to the footer which provides infos about the app maker */
+.footer{
+    background-color: #d9d9d9;
+    min-height: 10vh;
+    display: flex;
+    font-size: .75rem;
+    font-family: sans-serif;
+    margin: 25px 0px 0px 0px;
+    border-radius: 50px;
+}
+.footer > *{
+/*  selects all the direct children elements  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy, .company {
+    flex-basis: 25%;
+}
+.icons{
+    flex-basis: 50%;
+    gap: .5rem;
+    font-size: 1.75rem;
+}
+.company{
+    flex-direction: column;
+}

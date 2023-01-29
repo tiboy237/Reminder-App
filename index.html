@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="logo.svg">
+</head>
+<body>
+    <div class="container">
+
+        <div class="controlArea">
+            <a href="#" class="edit">Edit</a>
+        </div>
+
+        <form action="" method="get" id="search">
+            <input type="text" name="searchBar" id="searchBar" placeholder="Search">
+            <i class="bi bi-search"></i>
+        </form>
+
+        <div class="boxes">
+            <div class="box today">
+                <i class="bi bi-calendar-fill"></i>
+                <div class="number" id="num1">0</div>
+                <div class="title">Today</div>
+            </div>
+            <div class="box scheduled">
+                <i class="bi bi-clock-fill"></i>
+                <div class="number" id="num2">0</div>
+                <div class="title">Scheduled</div>
+            </div>
+            <div class="box all">
+                <i class="bi bi-hdd-fill"></i>
+                <div class="number" id="num3">0</div>
+                <div class="title">All</div>
+            </div>
+            <div class="box flagged">
+                <i class="bi bi-flag-fill"></i>
+                <div class="number" id="num4">0</div>
+                <div class="title">Flagged</div>
+            </div>
+        </div>
+
+        <div class="lists">
+            <h1>My Lists</h1>
+            <div class="list todo">
+                <i class="bi bi-list-ul icon"></i>
+                <div class="info">
+                    <div class="title">To Do</div>
+                    <div class="number" id="num5">0<i class="bi bi-chevron-right"></i></div>
+                </div>
+            </div>
+            <div class="list family">
+                <i class="bi bi-list-ul icon"></i>
+                <div class="info">
+                    <div class="title">Family</div>
+                    <div class="number" id="num6">0<i class="bi bi-chevron-right"></i></div>
+                </div>
+            </div>
+            <div class="addList">
+                <i class="bi bi-plus-circle"></i>
+                <button id="addListBtn">Add List</button>
+            </div>
+        </div>
+        
+        <div class="output">
+            <div class="title">
+                <h1>Reminder App</h1>
+                <br>
+            </div>
+            <div class="completed">
+                <p><span id="completedCounter">0</span> Completed</p>
+                <button id="clearButton" disabled>Clear</button>
+                <button id="hideButton" disabled>Hide</button>
+            </div>
+            <form action="action.php" method="get" id="reminderForm">
+                <label for="task">Task:</label>
+                <input type="text" id="task" name="task">
+            
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+            
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time">
+
+                <label for="time">List:</label>
+                <select name="myLists" id="myLists">
+                    <option value="0" disabled selected>-- Select one of your list --</option>
+                    <option value="to do list">To Do List</option>
+                    <option value="family list">Family List</option>
+                </select>
+            
+                <input type="button" value="Add Reminder" id="addReminderBtn">
+            </form>
+            <div class="remindersList">
+                <!-- This is where we are going to display our tasks -->
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="copy">
+                <p>Reminder App - Ponti Dev &copy; 2023</p>
+              </div>
+              <div class="icons">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-snapchat"></i>
+                <i class="bi bi-instagram"></i>
+              </div>
+              <div class="company">
+                <p>317-607-9456</p>
+                <p>tiouaisrael882@gmail.com</p>
+                <p>13408 District Parkway</p>
+                <p>Fishers, IN 46037</p>
+        </div>
+
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
